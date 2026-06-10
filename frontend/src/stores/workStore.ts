@@ -27,7 +27,7 @@ export const useWorkStore = defineStore("works", () => {
     if (savedWorks.length) {
       works.value = savedWorks.map((w) => ({
         ...w,
-        collectionIds: (w as Record<string, unknown>).collected
+        collectionIds: (w as unknown as Record<string, unknown>).collected
           ? [folders.value[0]?.id ?? "folder-default"]
           : (w.collectionIds ?? []),
       }));
@@ -64,7 +64,7 @@ export const useWorkStore = defineStore("works", () => {
   }
 
   function addFolder(name: string) {
-    const folder: CollectionFolder = { id: `folder-${Date.now()}`, name, createdAt: new Date().toISOString() };
+    const folder: CollectionFolder = { id: crypto.randomUUID(), name, createdAt: new Date().toISOString() };
     folders.value.push(folder);
     persistFolders();
     return folder;
