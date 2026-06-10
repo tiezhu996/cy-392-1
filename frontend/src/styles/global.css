@@ -1,0 +1,24 @@
+:root { color: #1f2937; background: #f6f7f3; font-family: Inter, system-ui, sans-serif; }
+.dark { color: #e5e7eb; background: #171717; }
+body { margin: 0; background: inherit; }
+button, input, select { border: 1px solid #d1d5db; border-radius: 8px; padding: 8px 10px; background: white; }
+.dark button, .dark input, .dark select { background: #262626; color: #e5e7eb; border-color: #525252; }
+.page { max-width: 1280px; margin: 0 auto; padding: 24px; }
+.hero { display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+.hero h1 { margin: 0; font-size: 34px; }
+.filters, .upload { display: flex; flex-wrap: wrap; gap: 10px; margin: 16px 0; }
+.masonry { columns: 4 240px; column-gap: 18px; }
+.work-card { break-inside: avoid; margin: 0 0 18px; border: 1px solid #e5e7eb; border-radius: 8px; overflow: hidden; background: rgba(255,255,255,.86); }
+.dark .work-card { background: #222; border-color: #3f3f46; }
+.lazy-image { display: block; width: 100%; min-height: 180px; object-fit: cover; cursor: pointer; background: #e5e7eb; }
+.card-body { padding: 12px; }
+.card-body h3 { margin: 0 0 6px; }
+.card-body p { color: #6b7280; font-size: 14px; }
+.meta, .actions { display: flex; justify-content: space-between; gap: 8px; font-size: 13px; }
+.detail-mask { position: fixed; inset: 0; background: rgba(0,0,0,.45); display: grid; place-items: center; padding: 20px; }
+.detail { width: min(900px, 96vw); max-height: 90vh; overflow: auto; border-radius: 8px; background: white; padding: 18px; position: relative; }
+.dark .detail { background: #1f1f1f; }
+.close { position: absolute; right: 12px; top: 12px; }
+.carousel { display: grid; grid-auto-flow: column; grid-auto-columns: 260px; gap: 10px; overflow-x: auto; }
+.carousel img { width: 260px; height: 280px; object-fit: cover; border-radius: 8px; }
+.detail footer { display: flex; align-items: center; gap: 12px; border-top: 1px solid #eee; padding-top: 12px; }
