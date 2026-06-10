@@ -22,3 +22,21 @@ button, input, select { border: 1px solid #d1d5db; border-radius: 8px; padding: 
 .carousel { display: grid; grid-auto-flow: column; grid-auto-columns: 260px; gap: 10px; overflow-x: auto; }
 .carousel img { width: 260px; height: 280px; object-fit: cover; border-radius: 8px; }
 .detail footer { display: flex; align-items: center; gap: 12px; border-top: 1px solid #eee; padding-top: 12px; }
+.picker-mask { position: fixed; inset: 0; background: rgba(0,0,0,.35); display: grid; place-items: center; z-index: 50; }
+.picker { width: min(380px, 92vw); background: white; border-radius: 12px; padding: 20px; box-shadow: 0 8px 32px rgba(0,0,0,.18); }
+.dark .picker { background: #1f1f1f; }
+.picker h3 { margin: 0 0 12px; font-size: 16px; }
+.picker-list { list-style: none; margin: 0; padding: 0; }
+.picker-item { display: flex; align-items: center; gap: 8px; padding: 10px 8px; border-radius: 6px; cursor: pointer; font-size: 14px; }
+.picker-item:hover { background: #f3f4f6; }
+.dark .picker-item:hover { background: #2a2a2a; }
+.picker-check { flex-shrink: 0; width: 20px; text-align: center; }
+.picker-remove { margin-left: auto; background: none; border: none; color: #9ca3af; cursor: pointer; padding: 2px 6px; font-size: 16px; }
+.picker-remove:hover { color: #ef4444; }
+.picker-new { padding: 10px 8px; color: #6366f1; cursor: pointer; font-size: 14px; border-top: 1px solid #e5e7eb; margin-top: 4px; }
+.dark .picker-new { border-color: #3f3f46; }
+.picker-new-form { display: flex; gap: 6px; margin-top: 8px; }
+.picker-new-form input { flex: 1; }
+.picker-new-form button { padding: 6px 10px; }
+.picker-done { width: 100%; margin-top: 12px; padding: 8px; border-radius: 6px; background: #6366f1; color: white; border: none; cursor: pointer; }
+.picker-done:hover { background: #4f46e5; }

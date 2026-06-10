@@ -1,8 +1,17 @@
 <script setup lang="ts">
+import { ref } from "vue";
 import type { CraftWork } from "../types/work";
 import LazyImage from "./LazyImage.vue";
+import CollectionPicker from "./CollectionPicker.vue";
+
 defineProps<{ work: CraftWork }>();
-defineEmits<{ select: [CraftWork]; like: [string]; collect: [string] }>();
+defineEmits<{ select: [CraftWork]; like: [string] }>();
+
+const picker = ref<InstanceType<typeof CollectionPicker> | null>(null);
+
+function openPicker(workId: string) {
+  picker.value?.open(workId);
+}
 </script>
 
 <template>
@@ -14,8 +23,9 @@ defineEmits<{ select: [CraftWork]; like: [string]; collect: [string] }>();
       <div class="meta"><span>{{ work.difficulty }}</span><span>{{ work.durationHours }} 小时</span></div>
       <div class="actions">
         <button @click="$emit('like', work.id)">赞 {{ work.likes }}</button>
-        <button @click="$emit('collect', work.id)">{{ work.collected ? "已收藏" : "收藏" }}</button>
+        <button @click="openPicker(work.id)">{{ work.collectionIds.length ? `已收藏(${work.collectionIds.length})` : "收藏" }}</button>
       </div>
     </div>
+    <CollectionPicker ref="picker" />
   </article>
 </template>

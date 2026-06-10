@@ -15,6 +15,6 @@ export const mockWorks: CraftWork[] = Array.from({ length: 18 }).map((_, index) 
   tutorialUrl: "https://example.com/tutorial",
   author,
   likes: 12 + index * 3,
-  collected: index % 5 === 0,
+  collectionIds: index % 5 === 0 ? ["folder-default"] : [],
   createdAt: new Date(Date.now() - index * 86400000).toISOString()
 }));

@@ -8,6 +8,12 @@ export interface Author {
   followed: boolean;
 }
 
+export interface CollectionFolder {
+  id: string;
+  name: string;
+  createdAt: string;
+}
+
 export interface CraftWork {
   id: string;
   title: string;
@@ -21,6 +27,6 @@ export interface CraftWork {
   tutorialUrl?: string;
   author: Author;
   likes: number;
-  collected: boolean;
+  collectionIds: string[];
   createdAt: string;
 }
